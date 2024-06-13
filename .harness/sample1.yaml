@@ -1,0 +1,33 @@
+pipeline:
+  name: sample-1
+  identifier: sample1
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Githubnavya
+        repoName: lms-public-services-project
+        build: <+input>
+  stages:
+    - stage:
+        name: LMS-Build
+        identifier: LMSBuild
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec: {}
